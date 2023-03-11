@@ -1,16 +1,15 @@
 {
   "files": {
-    "main.css": "/zidny-clothing/static/css/main.073c9b0a.css",
-    "main.js": "/zidny-clothing/static/js/main.769256d4.js",
+    "main.css": "/zidny-clothing/static/css/main.3b0a0848.css",
+    "main.js": "/zidny-clothing/static/js/main.a8295b12.js",
     "static/js/787.8d41675a.chunk.js": "/zidny-clothing/static/js/787.8d41675a.chunk.js",
-    "static/media/logo.svg": "/zidny-clothing/static/media/logo.6ce24c58023cc2f8fd88fe9d219db6c6.svg",
     "index.html": "/zidny-clothing/index.html",
-    "main.073c9b0a.css.map": "/zidny-clothing/static/css/main.073c9b0a.css.map",
-    "main.769256d4.js.map": "/zidny-clothing/static/js/main.769256d4.js.map",
+    "main.3b0a0848.css.map": "/zidny-clothing/static/css/main.3b0a0848.css.map",
+    "main.a8295b12.js.map": "/zidny-clothing/static/js/main.a8295b12.js.map",
     "787.8d41675a.chunk.js.map": "/zidny-clothing/static/js/787.8d41675a.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.073c9b0a.css",
-    "static/js/main.769256d4.js"
+    "static/css/main.3b0a0848.css",
+    "static/js/main.a8295b12.js"
   ]
 }
