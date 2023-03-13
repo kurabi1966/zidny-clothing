@@ -4,7 +4,8 @@ import { Routes, Route } from "react-router-dom";
 import Nvaigation from "./routes/navigation/navigation.component";
 import Home from "./routes/home/home.component";
 import Shop from "./routes/shop/shop.component";
-import About from "./routes/about/about.component";
+import ContactUs from "./routes/contact-us/contact-us.component";
+import Authentication from "./routes/authentication/authentication.component";
 
 const App = () => {
   return (
@@ -12,7 +13,8 @@ const App = () => {
       <Route path="/" element={<Nvaigation />}>
         <Route index element={<Home />}></Route>
         <Route path="shop" element={<Shop />}></Route>
-        <Route path="about" element={<About />}></Route>
+        <Route path="contact" element={<ContactUs />}></Route>
+        <Route path="auth" element={<Authentication />}></Route>
       </Route>
     </Routes>
   );
