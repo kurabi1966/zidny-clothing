@@ -3,9 +3,10 @@
   flex-direction: column;
   width: 380px;
   h2 {
-    margin: 10x 0;
+    margin: 10px auto;
   }
   .buttons-container {
+    margin: 20px auto;
     display: flex;
     justify-content: space-between;
   }

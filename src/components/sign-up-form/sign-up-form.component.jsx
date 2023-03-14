@@ -1,4 +1,6 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
+
 import {
   createAuthUserWithEmailAndPassword,
   createUserDocumentFromAuth,
@@ -9,16 +11,13 @@ import "./sign-up-form.styles.scss";
 
 const defaultFormFields = {
   displayName: "",
-  phone: "",
   email: "",
   password: "",
-  confirmPassword: "",
 };
 
 const SignUpForm = () => {
   const [formFields, setFormFields] = useState(defaultFormFields);
-  //   console.log(formFields);
-  const { displayName, phone, email, password, confirmPassword } = formFields;
+  const { email, password, displayName } = formFields;
 
   const restFormFields = () => {
     setFormFields(defaultFormFields);
@@ -27,17 +26,12 @@ const SignUpForm = () => {
   const onSumbitHandler = async (event) => {
     event.preventDefault();
 
-    if (formFields.password !== formFields.confirmPassword) {
-      alert("Password should equal to Confirm Password");
-      return;
-    }
-
     try {
       const { user } = await createAuthUserWithEmailAndPassword(
         email,
         password
       );
-      await createUserDocumentFromAuth(user, { displayName });
+      await createUserDocumentFromAuth({ ...user, displayName });
       restFormFields();
     } catch (error) {
       const { code } = error;
@@ -89,17 +83,11 @@ const SignUpForm = () => {
             value: password,
           }}
         />
-        <FormInput
-          inputOptions={{
-            label: "Confirm Password",
-            type: "password",
-            required: true,
-            onChange: inputChangeHandler,
-            name: "confirmPassword",
-            value: confirmPassword,
-          }}
-        />
         <Button type="submit">Sign up</Button>
+        <span>
+          Alread have an accout?
+          <Link to={"/sign-in"}> Sign In</Link>
+        </span>
       </form>
     </div>
   );

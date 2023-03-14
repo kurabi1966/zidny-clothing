@@ -1,7 +1,9 @@
 .auth-container {
   display: flex;
-
+  background-color: bisque;
+  padding: 10px;
+  border-radius: 5%;
   margin: 30px auto;
-  width: 900px;
+  width: 400px;
   justify-content: space-between;
 }

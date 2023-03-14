@@ -8,6 +8,7 @@ import {
 } from "../../utils/firebase/firebase.utils";
 
 import "./sign-in-form.styles.scss";
+import { Link } from "react-router-dom";
 
 const defaultFormFields = {
   email: "",
@@ -15,6 +16,8 @@ const defaultFormFields = {
 };
 
 const SignInForm = () => {
+  // redirect to home if logged in
+
   const [formFields, setFormFields] = useState(defaultFormFields);
   const { email, password } = formFields;
   const restFormFields = () => {
@@ -44,7 +47,7 @@ const SignInForm = () => {
   const signInWithEmailAndPassword = async (event) => {
     event.preventDefault();
     try {
-      const user = await signInUserWithEmailAndPassword(email, password);
+      await signInUserWithEmailAndPassword(email, password);
     } catch (error) {
       switch (error.code) {
         case "auth/user-not-found":
@@ -82,7 +85,7 @@ const SignInForm = () => {
   ];
   return (
     <div className="sign-in-container">
-      <h2>I already have an account</h2>
+      <h2>Sign In</h2>
       <span>Sign in with your email and password</span>
       <form onSubmit={signInWithEmailAndPassword}>
         <FormInput inputOptions={filedsOptions[0]} />
@@ -93,6 +96,10 @@ const SignInForm = () => {
             GOOGLE SIGN IN
           </Button>
         </div>
+        <span>
+          Do'nt have an account?
+          <Link to={"/sign-up"}> Sign Up</Link>
+        </span>
       </form>
     </div>
   );
