@@ -7,6 +7,7 @@ import Shop from "./routes/shop/shop.component";
 import ContactUs from "./routes/contact-us/contact-us.component";
 import SignIn from "./routes/authentication/sign-in.component";
 import SignUp from "./routes/authentication/sign-up.component";
+import Checkout from "./routes/checkout/checkout.componet";
 
 const App = () => {
   return (
@@ -17,6 +18,7 @@ const App = () => {
         <Route path="contact" element={<ContactUs />}></Route>
         <Route path="sign-in" element=<SignIn />></Route>
         <Route path="sign-up" element=<SignUp />></Route>
+        <Route path="checkout" element=<Checkout />></Route>
       </Route>
     </Routes>
   );
