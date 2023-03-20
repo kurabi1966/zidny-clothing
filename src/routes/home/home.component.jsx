@@ -28,12 +28,6 @@ const Home = () => {
       title: "mens",
       imageUrl: "https://i.ibb.co/R70vBrQ/men.png",
     },
-    {
-      id: 6,
-      title: "Accessories",
-      imageUrl:
-        "https://www.shutterstock.com/shutterstock/photos/1532053424/display_1500/stock-photo-fashion-women-stylish-accessories-outfit-glamour-set-with-label-flat-lay-beige-pastel-background-1532053424.jpg",
-    },
   ];
 
   return <Directory categories={categories} />;
