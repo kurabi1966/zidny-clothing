@@ -10,6 +10,9 @@ const CategoryPreview = ({ products, title, preview }) => {
   const navigateToShop = () => {
     navigate("/shop");
   };
+  if (!products || products.length === 0) {
+    return <h1>Loading...</h1>;
+  }
   return (
     <div className="category-preview-container" key={title}>
       {preview === true ? (
