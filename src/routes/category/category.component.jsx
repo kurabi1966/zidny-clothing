@@ -7,12 +7,12 @@ const Category = () => {
   const { category } = useParams();
   const [categoryProducts, setCategory] = useState([]);
   const { categoriesMap } = useContext(CategoriesContext);
-
+  console.log(category);
   useEffect(() => {
     setCategory(categoriesMap[category]);
   }, [category, categoriesMap]);
 
-  if (categoryProducts.length === 0) {
+  if (categoryProducts && categoryProducts.length === 0) {
     return <h1>Loading</h1>;
   } else {
     return (
