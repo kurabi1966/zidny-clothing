@@ -17,10 +17,9 @@ const CartDropdown = () => {
   return (
     <div className="cart-dropdown-container">
       <div className="cart-items">
-        {cartItems.map((item) => (
-          <CartItem key={item.id} cartItem={item} />
-        ))}
-        {cartItems.length > 0 && (
+        {cartItems &&
+          cartItems.map((item) => <CartItem key={item.id} cartItem={item} />)}
+        {cartItems && cartItems.length > 0 && (
           <Fragment>
             <span className="seperator" />
             <span>Total ${cartAmount}</span>

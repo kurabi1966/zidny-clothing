@@ -8,7 +8,7 @@ import "./checkout.styles.scss";
 const Checkout = () => {
   const { cartItems, cartAmount } = useContext(CartContext);
   //   console.log(cartItems);
-  if (cartItems.length > 0) {
+  if (cartItems && cartItems.length > 0) {
     return (
       <div className="checkout-container">
         <div className="checkout-header">
