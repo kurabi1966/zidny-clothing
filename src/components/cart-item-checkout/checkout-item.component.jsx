@@ -1,7 +1,15 @@
 import { useContext } from "react";
 import { CartContext } from "../../context/cart.context";
-
-import "./checkout-item.styles.scss";
+import {
+  CeckoutItemContainer,
+  ImageContainer,
+  Image,
+  Field,
+  Quantity,
+  Italic,
+  RemoveButton,
+  Value,
+} from "./checkout-item.styles";
 
 const CheckoutItem = ({ cartItem }) => {
   const { name, imageUrl, price, quantity } = cartItem;
@@ -21,30 +29,30 @@ const CheckoutItem = ({ cartItem }) => {
   };
 
   return (
-    <div className="checkout-item-container">
-      <div className="image-container">
-        <img alt={name} src={imageUrl} />
-      </div>
+    <CeckoutItemContainer>
+      <ImageContainer>
+        <Image alt={name} src={imageUrl} />
+      </ImageContainer>
 
-      <span className="name">{name}</span>
-      <span className="quantity">
-        <i
+      <Field>{name}</Field>
+      <Quantity>
+        <Italic
           onClick={decrementItemQuantitiyHandler}
           className="fa-sharp fa-solid fa-circle-down"
-        ></i>
-        <span className="value"> {quantity}</span>
-        <i
+        ></Italic>
+        <Value> {quantity}</Value>
+        <Italic
           onClick={incrementItemQuantitiyHandler}
           className="fa-sharp fa-solid fa-circle-up"
-        ></i>
-      </span>
-      <span className="price">${price}</span>
-      <span className="price">${price * quantity}</span>
+        ></Italic>
+      </Quantity>
+      <Field>${price}</Field>
+      <Field>${price * quantity}</Field>
 
-      <div className="remove-button" onClick={deleteItemHandler}>
+      <RemoveButton onClick={deleteItemHandler}>
         <i className="fa fa-trash" aria-hidden="true"></i>
-      </div>
-    </div>
+      </RemoveButton>
+    </CeckoutItemContainer>
   );
 };
 

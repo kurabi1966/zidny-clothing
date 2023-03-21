@@ -1,9 +1,14 @@
-import Button from "../button/button.component";
-import "./cart-dropdown.styles.scss";
+import Button, { BUTOON_TYPE_CLASSES } from "../button/button.component";
 import { Fragment, useContext } from "react";
 import { CartContext } from "../../context/cart.context";
 import CartItem from "../cart-item/cart-item.component";
 import { useNavigate } from "react-router-dom";
+import {
+  CartDropdownContainer,
+  CartItems,
+  Seperator,
+  ButtonContainer,
+} from "./cart-dropdown.styles";
 
 const CartDropdown = () => {
   const navigate = useNavigate();
@@ -15,20 +20,24 @@ const CartDropdown = () => {
   };
 
   return (
-    <div className="cart-dropdown-container">
-      <div className="cart-items">
+    <CartDropdownContainer>
+      <CartItems>
         {cartItems.map((item) => (
           <CartItem key={item.id} cartItem={item} />
         ))}
         {cartItems.length > 0 && (
           <Fragment>
-            <span className="seperator" />
+            <Seperator />
             <span>Total ${cartAmount}</span>
           </Fragment>
         )}
-      </div>
-      <Button onClick={onClickHandler}>Checkout</Button>
-    </div>
+      </CartItems>
+      <ButtonContainer>
+        <Button onClick={onClickHandler} buttonType={BUTOON_TYPE_CLASSES.base}>
+          Checkout
+        </Button>
+      </ButtonContainer>
+    </CartDropdownContainer>
   );
 };
 
